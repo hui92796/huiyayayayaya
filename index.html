@@ -20,10 +20,13 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<span class="logo"><img src="images/hui.jpg" alt="" /></span>
-						<h1>My Name Is Hui</h1>
-						<p>卉的個人網站</p>
-					</header>
+					<marquee class="welcome-marquee" behavior="scroll" direction="left" scrollamount="4" style="display:block; margin:-0.8rem 0 1rem 0; color:#f8fbff; text-shadow:0 1px 2px rgba(0,0,0,0.30); font-size:0.98rem; letter-spacing:0.08em; background: rgba(255, 255, 255, 0.08); padding:0.45rem 1rem; border-radius:999px; border:1px solid rgba(255,255,255,0.20);">
+						歡迎來到Hui的網站 Sa Wa Dee Ka!
+					</marquee>
+					<span class="logo"><img src="images/hui.jpg" alt="" /></span>
+					<h1 class="animated-title"><span>My</span><span>Name</span><span>Is</span><span>Hui</span></h1>
+					<p class="subtitle">卉的個人網站</p>
+				</header>
 
 				<!-- Nav -->
 					<nav id="nav">
@@ -153,6 +156,7 @@
 							<p>現在就讀南台科技大學五專部三年級，我的學號是:5b2g0006，本名:陳亮卉，沒事不用來找我~~~。</p>
 							<ul class="actions">
 								<li><a href="index.html" class="button">TOP</a></li>
+								<li><a href="#" class="button" id="gameMenuButton">遊戲選單</a></li>
 							</ul>
 						</section>
 						<section>
@@ -176,7 +180,18 @@
 						<p class="copyright">&copy; 我是 Hui 阿卉 | ขอบคุณค่ะ (謝謝大家)</p>
 					</footer>
 
+		<div id="gameMenuDialog">
+			<div>
+				<h3>遊戲選單</h3>
+				<p>請點選你想去的區域：</p>
+				<div>
+					<a href="#" id="waterGameButton">倒水遊戲</a>
+					<a href="#" id="mineGameButton">踩地雷</a>
+					<a href="#" id="chillZoneButton">休閒區</a>
+					<a href="#" id="gameMenuCancel">取消</a>
+				</div>
 			</div>
+		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -186,6 +201,47 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				const gameMenuButton = document.getElementById('gameMenuButton');
+				const gameMenuDialog = document.getElementById('gameMenuDialog');
+				const waterGameButton = document.getElementById('waterGameButton');
+				const mineGameButton = document.getElementById('mineGameButton');
+				const chillZoneButton = document.getElementById('chillZoneButton');
+				const gameMenuCancel = document.getElementById('gameMenuCancel');
 
-	</body>
+				if (gameMenuButton) {
+					gameMenuButton.addEventListener('click', function (event) {
+						event.preventDefault();
+						gameMenuDialog.style.display = 'flex';
+					});
+				}
+
+				if (waterGameButton) {
+					waterGameButton.addEventListener('click', function (event) {
+						event.preventDefault();
+						window.location.href = 'https://hui92796.github.io/12345/WaterPuzzle.html';
+					});
+				}
+
+				if (mineGameButton) {
+					mineGameButton.addEventListener('click', function (event) {
+						event.preventDefault();
+						window.location.href = 'https://hui92796.github.io/555555/mine.html';
+					});
+				}
+
+				if (chillZoneButton) {
+					chillZoneButton.addEventListener('click', function (event) {
+						event.preventDefault();
+						window.location.href = 'https://hui92796.github.io/0619/';
+					});
+				}
+
+				if (gameMenuCancel) {
+					gameMenuCancel.addEventListener('click', function (event) {
+						event.preventDefault();
+						gameMenuDialog.style.display = 'none';
+					});
+				}
+			</script>
 </html>
